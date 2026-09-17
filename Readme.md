@@ -77,3 +77,9 @@ The complete Greek alphabet has 24 letters:
 22. 21 Chi — Χ χ  
 23. Psi — Ψ ψ  
 24. Omega — Ω ω
+
+# SSH Key
+```powershell
+# in Windows 11 
+type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh root@192.168.21.69 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+```
