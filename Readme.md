@@ -83,3 +83,9 @@ The complete Greek alphabet has 24 letters:
 # in Windows 11 
 type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh root@192.168.21.69 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
 ```
+
+# استفاده از کلید SSH در ویندوز
+
+```powershell
+Get-Content "$env:USERPROFILE\.ssh\id_ed25519.pub" | ssh user@VM_IP 'umask 077; mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys; chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys'
+```
